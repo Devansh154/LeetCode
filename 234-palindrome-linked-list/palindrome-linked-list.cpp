@@ -24,6 +24,10 @@ private:
     }
 public:
     bool isPalindrome(ListNode* head) {
+
+        if(head -> next == NULL){
+            return true;
+        }
         ListNode* middle = mid(head);
 
         ListNode* temp = middle -> next;
