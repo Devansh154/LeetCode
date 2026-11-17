@@ -25,7 +25,7 @@ public:
             root -> left = deleteNode(root -> left, key);
         }
         else if(key > root -> val){
-            root -> right = deleteNode(root -> right, key);
+            root -> right = deleteNode(root -> right , key);
         }
         else{
             if(root -> left == nullptr){
@@ -38,10 +38,9 @@ public:
                 delete root;
                 return temp;
             }
-            
             TreeNode* temp = findMin(root -> right);
             root -> val = temp -> val;
-            root -> right = deleteNode(root -> right , temp -> val);
+            root -> right = deleteNode(root -> right, temp -> val);
         }
         return root;
     }
