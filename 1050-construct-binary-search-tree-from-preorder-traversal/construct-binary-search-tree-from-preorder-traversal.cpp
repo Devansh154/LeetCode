@@ -14,7 +14,7 @@ public:
     TreeNode* solve(vector<int>& preorder, int mini , int maxi , int& i ){
         if(i >= preorder.size())
             return NULL;
-        if(preorder[i] > maxi || preorder[i] < mini)
+        if(preorder[i] < mini || preorder[i] > maxi)
             return NULL;
         TreeNode* root = new TreeNode(preorder[i++]);
         root -> left = solve(preorder, mini , root -> val, i);
